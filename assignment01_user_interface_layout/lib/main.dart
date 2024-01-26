@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
                       color: Colors.amber,
                       border: Border.all(
                         color: Colors.black,
-                        width: 4,
+                        width: 3.0,
                       )),
                   child: const Center(
                     child: Text('Container 1'),
@@ -62,17 +62,61 @@ class MyApp extends StatelessWidget {
                 )
               ],
             ),
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(
+                  child: Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: Container(
+                          width: 100.0,
+                          height: 100.0,
+                          color: Colors.yellow,
+                          child: const Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text('Container 3'))))),
+              Expanded(
+                  child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Container(
+                        width: 100.0,
+                        height: 100.0,
+                        color: Colors.blue,
+                        child: const Align(
+                          alignment: Alignment.centerRight,
+                          child: Text('Container 4'),
+                        ),
+                      )))
+            ]),
             Column(
               children: [
-                Container(
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.black,
+                        border: Border.all(color: Colors.white, width: 3.0)),
+                    child: const Center(
+                      child: Text(
+                        'Container 5',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                    child: Container(
                   width: 100.0,
                   height: 100.0,
-                  color: Colors.yellow,
-                  child: (Text('Container 3')),
-                )
+                  color: Colors.red,
+                  child: const Text(
+                    'Con 6',
+                    style: TextStyle(fontSize: 30),
+                  ),
+                ))
               ],
-            ),
-            Column(),
+            )
           ],
         ),
       ),
